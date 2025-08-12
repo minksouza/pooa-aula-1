@@ -13,4 +13,19 @@ public abstract class User {
         this.password = password;
     }
 
+	public int getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public boolean checkPassword(String p) {
+		return password.equals(p);
+	}
 }
