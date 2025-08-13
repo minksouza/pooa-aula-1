@@ -33,8 +33,8 @@ class UserStructureTest {
 		assertEquals("Yasmin", b.getNome());
 		assertTrue(b.checkPassword("456"));
 
-		User c = new GuestUser("taylorswift@x",3, "Taylor", "000");
-		assertEquals("Taylor", c.getNome());
+		User c = new GuestUser("taylorswift@x",3, "Taylor Swift", "000");
+		assertEquals("Taylor Swift", c.getNome());
 		assertTrue(c.checkPassword("000"));
 	}
 }
