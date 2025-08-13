@@ -1,8 +1,10 @@
 package cms.user;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import java.lang.reflect.Modifier;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 class UserStructureTest {
 	@Test
@@ -23,8 +25,16 @@ class UserStructureTest {
 		// Este teste só compila se você criar cms.user.User e ajustar AdminUser para
 		// extends User
 		// Ajuste depois de criar a superclasse
-		AdminUser a = new AdminUser(1, "Ana", "ana@x", "123");
+		User a = new AdminUser("ana@x",1, "Ana", "123");
 		assertEquals("Ana", a.getNome());
 		assertTrue(a.checkPassword("123"));
+
+		User b = new EditorUser("Yasmin@x",2, "Yasmin", "456");
+		assertEquals("Yasmin", b.getNome());
+		assertTrue(b.checkPassword("456"));
+
+		User c = new GuestUser("taylorswift@x",3, "Taylor", "000");
+		assertEquals("Taylor", c.getNome());
+		assertTrue(c.checkPassword("000"));
 	}
 }
